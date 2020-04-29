@@ -12,7 +12,7 @@ class MainPg extends Component {
                 <h4>forecast</h4>
 
                 <div className="svgContainer">
-                    <img src={weatherIcons[1].iSRC} alt="" srcset="" className="wIcons"/>
+                    <img src={weatherIcons[1].iSRC} alt="weather" className="wIcons"/>
                 </div>
                 <InputField />
 
