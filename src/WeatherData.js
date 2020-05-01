@@ -66,7 +66,7 @@ class WeatherData extends Component {
         // API Weather Call... Called from within GEo Location call...
         const weatherCall =() =>{
             axios({
-                url: `https://api.openweathermap.org/data/2.5/onecall?lat=${this.state.newLat}&lon=${this.state.newLon}&units=${this.state.units}&appid=${this.state.keys}`,
+                url: `http://api.openweathermap.org/data/2.5/onecall?lat=${this.state.newLat}&lon=${this.state.newLon}&units=${this.state.units}&appid=${this.state.keys}`,
                 method: 'GET',
                 responseType: 'json'
                 })
