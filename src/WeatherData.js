@@ -1,53 +1,150 @@
 import React, { Component } from "react";
 import axios from 'axios';
+import images from "./images";
+import InputField from './InputField';
+import './App.scss';
 
 
 class WeatherData extends Component {
     constructor(){
         super();
         this.state = {
-            // weather: true
-            key: '1b5614554d2203c32690e03daee17bfb',
-            lat: '60.99',
-            lon: '30.9',
-            // q: 'London',
-            weather: []
+            // from INPUT
+            newSearch: 'Toronto',
+
+            // from MAP API
+            newLat: '',
+            newLon: '',
+            mapApiResult: [],
+
+            // Weather API, required for return
+            keys: '1b5614554d2203c32690e03daee17bfb',
+            units: `metric`, //Default, OPTION to change
+
+            // storing Data to be distributed by RETURN...
+            weather: [],
+            currentTemp: [],
+            currentTempFeelLIke: [],
+            currentCond: [],
+
+            weatherTomorrow: [], // stretch goals
+            weatherIn2Days: [] // stretch goals
         }
-        console.log(this.state.weather)
+        const newLocation = this.state.newSearch;
+        console.log(newLocation);
     }
 
     componentDidMount() {
-            axios({
-                url: `https://api.openweathermap.org/data/2.5/onecall?lat=${this.state.lat}&lon=${this.state.lon}&appid=${this.state.key}`,
-                // url: `https://api.openweathermap.org/data/2.5/weather?q=${this.state.q}&appid=${this.state.key}`,
-                method: 'GET',
-                responseType: 'json',
-                // params: {
-                //     // key: '1b5614554d2203c32690e03daee17bfb'
-                //     // lat: '60.99',
-                //     // lon: '30.9'
-                // }
+        // const reqLocation = this.state.newSearch;
+       this.search();
+
+    }
+        
+    search = () => {
+        // Geolocation Call
+        axios({
+            url: 'http://www.mapquestapi.com/geocoding/v1/address',
+            method: 'GET',
+            responseType: 'json',
+            params: {
+                key: 'srnbJxPHaOsssQrGNwDmj2K6n47ObSRq',
+                // location: reqLocation,
+                location: this.state.newSearch
+            }
+
+        })
+            .then((results) => {
+                this.setState({
+                    mapApiResult: results,
+                    newLat: results.data.results[0].locations[0].latLng.lat,
+                    newLon: results.data.results[0].locations[0].latLng.lng
+                })
+                console.log(this.state.mapApiResult, this.state.newLat, this.state.newLon)
+                weatherCall();
             })
+
+        // API Weather Call... Called from within GEo Location call...
+        const weatherCall =() =>{
+            axios({
+                url: `https://api.openweathermap.org/data/2.5/onecall?lat=${this.state.newLat}&lon=${this.state.newLon}&units=${this.state.units}&appid=${this.state.keys}`,
+                method: 'GET',
+                responseType: 'json'
+                })
                 .then((response) => { 
+                    // Destructured
+                    const { daily, hourly } = response.data
+
+                    // Returned Data ...settingSate
                     this.setState({
-                        weather: response.data.daily[0].weather
-                        // weather: response.data.weather
+                        weather: daily[0],
+                        currentTemp: (hourly[0].temp).toFixed(0),
+                        currentTempFeelLIke: (hourly[0].feels_like).toFixed(0),
+                        currentCond: daily[0].weather[0].description,
+                        weatherTomorrow: daily[1], // Stretch...
+                        weatherIn2Days: daily[2], // Stretch...
                     })
                     console.log(this.state.weather)
                 })
         }
+    }     
+   
 
-        
 
-    render() {
-
-        return (
-            <div> 
-                {this.state.weather ? <p>Weather data goes here</p> : null} 
-            </div>
-        )
+    // Search Passed to SearchFor, from Input.js, using Props
+    searchFor = (e, searchReq) =>{
+        e.preventDefault();
+        // this.state.userInput !== ''
+        //     ? this.setState({ userInput: '' })
+        //     : alert(`Please enter Location`)
+        // console.log(searchReq);
+        this.setState({
+            newSearch: searchReq
+        },this.search);
     }
 
+    // render is called on in MainPg.js
+    render() {   
+        return (
+            <>
+                <h3>
+                    <span className="visHidden"></span>
+                    {this.state.currentTempFeelLIke}
+                    <span>°</span>
+                </h3>
+                <div className="conditionsContainer">
+                    <img src={images[3].iSrc} alt={images[3].iAlt} className="wIcons" />
+                    <h5><span>...</span> {this.state.currentCond}</h5>
+                </div>
+                
+                <section className="locationContainer">
+                    <h2 className="selectedLocale">
+                        {this.state.newSearch}
+                    </h2>
+                    <div className="inputContainer">
+                        <InputField searchInput={this.searchFor}/>
+                    </div>
+                </section>
+            </>
+        )
+    }
 }
 
 export default WeatherData;
+
+
+    // React handleSubmit()
+    // handleSubmit(e){
+    //     e.preventDefault()
+    //     alert('Button Click working')
+    // };
+
+    // render(){
+
+    //     return (
+    //         <div className="geoLocateLink">
+    //             {/* Geo-location */}
+    //             {/* <input type="button" value="...use your current location" className="locateField geoLocationField" onClick={this.handleSubmit} /> */}
+    //             <input type="button" value="...use your current location" className="locateField geoLocationField" onClick={this.handleSubmit} />
+    //         </div>
+    //     )
+    // }

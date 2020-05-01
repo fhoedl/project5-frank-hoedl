@@ -16,7 +16,6 @@ class App extends Component {
     return (
       <div className="background">
         <BackgroundElements />
-        {/* {this.state.weatherdata ? <LandingPg />: null} */}
         {/* <LandingPg /> */}
         <MainPg />
       </div>

@@ -1,3 +1,91 @@
-h4 {
-    color:red;
+// Fonts
+
+h1,h2,h3,h4,h5{
+  margin: 0;
+  padding:0;
+  color: darkblue;
 }
+
+h1,h4{
+  font-family: $primaryFont;
+  text-transform: uppercase;
+  // display:block
+}
+
+h2,h3,h5{
+  font-family: $secondaryFont;
+}
+
+h2{
+  font-weight: 400;
+  font-size: 3.6rem;
+  letter-spacing: -.1rem;
+  text-align: center;
+}
+
+
+h3 {
+  font-weight: 200;
+  font-size: 25rem;
+  color: #fff;
+  letter-spacing: -.5rem;
+  line-height: 23rem;
+  text-align:center;
+    span{
+      font-weight: 200;
+      font-size: 14rem;
+      vertical-align: super;
+      margin-left: 1rem;
+    }
+    .visHidden{
+      opacity: 0;
+      width: 5px;
+      height: 70px;
+      display:inline-block;
+      margin:0;
+    }
+}
+
+h4 {
+  font-weight: 400;
+  font-size: 3.6rem;
+}
+
+h5{
+  font-weight: 300;
+  font-size: 2.2rem;
+  letter-spacing: -.1rem;
+  text-transform: capitalize;
+  width: 70%;
+}
+
+// Icons
+.wIcons {
+  width: 50px;
+  height: 50px;
+}
+
+// Inputs
+
+input {
+    display: block;
+    background-color: hsl(212, 19%, 45%);
+    border: none;
+    padding: .6rem 0;
+    // margin: 0 .5rem;
+    color: rgb(249, 249, 249);
+    font-weight: 400;
+    font-size: 1.7rem;
+    font-family: $secondaryFont;
+    width: 90%;
+    text-align: center;
+    letter-spacing: .02rem;
+    margin: auto;
+} 
+
+input[type="submit"] {
+    color:hsl(212, 19%, 45%);
+    background-color: rgb(229, 234, 240);
+    text-transform: uppercase;
+}
+

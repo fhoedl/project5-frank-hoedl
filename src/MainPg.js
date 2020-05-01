@@ -1,23 +1,35 @@
 import React, { Component } from "react";
-import InputField from "./InputField";
-import weatherIcons from "./weatherIcons";
+// import InputField from "./InputField";
 import WeatherData from "./WeatherData";
+import './App.scss';
 
 class MainPg extends Component {
 
     render(){
 
+
         return(
-            <div>
-                <h4>forecast</h4>
+            <main className="mainContainer wrapper">
 
-                <div className="svgContainer">
-                    <img src={weatherIcons[1].iSRC} alt="weather" className="wIcons"/>
-                </div>
-                <InputField />
+                <section className="header">
+                    <h4>forecaster</h4>
+                </section>
 
-                <WeatherData />
-            </div>
+                <section className="dataContainer">
+                    <WeatherData />
+                </section>
+                
+                {/* <section className="locationContainer">
+                    <h2 className="selectedLocale">
+                        Toronto 
+
+                    </h2>
+                    <div className="inputContainer">
+                        <InputField />
+                    </div>  
+                </section> */}
+            
+            </main>
         )
     }
 }

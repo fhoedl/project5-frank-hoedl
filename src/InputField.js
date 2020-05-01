@@ -1,50 +1,37 @@
 import React, { Component } from "react";
-
+// import axios from 'axios';
 
 class InputField extends Component {
     constructor(){
         super();
         this.state = {
-            userInput: ''
+            userInput: '',
         }
     }
 
-    // componentDidMount(){
-    //     axios({
-    //         url: '',
-    //         method: 'GET',
-    //         responseType: 'json',
-    //         params: {
-    //             key:
-    //         }
+    // Get USER INPUT...
+    handleUserInput = (e) => {
+        this.setState({ userInput: e.target.value } 
+    )}
 
-    //     })
-    // }
-
-    // event.target.value ( what user is typing ) put it into the this.state.userInput
-    handleUserInput = (event) => {
-        this.setState({
-            userInput: event.target.value
-        })
-        // console.log(this.state.userInput)
-    }
-
-    // on submit, clears input field, error message if empty
+    // PASS USER INPUT to WeatherData.js, ERROR Handled
     handleSubmit = (e) => {
-        // console.log(this.state.userInput)
         e.preventDefault();
-        this.state.userInput !== ''?  this.setState({ userInput: ''})  : alert(`Please enter Location`)
+        // this.state.userInput !== ''
+        //     ?  this.setState({ userInput: ''}) 
+        //     : alert(`Please enter Location`)
+        this.props.searchInput(e, this.state.userInput)
     }
 
+    // is called in MainPg amd LandingPg
     render(){ 
-  
         return(
-                <form onSubmit={this.handleSubmit} className="locateWSubmit">
-                    {/* Input Field */}
-                    <input type="text" id="locateInput" value={this.state.userInput} placeholder="enter your location" className="locateField" onChange={this.handleUserInput}/> 
-                    {/* Submit Button */}
-                    <input type="submit" value="Submit" className="locateField"/>
-                </form>  
+            <form  className="locateWSubmit">
+
+                <input type="text" id="locateInput" value={this.state.userInput} placeholder="New Search" className="locateField" onChange={this.handleUserInput} /> 
+
+                <input onClick={this.handleSubmit} type="submit" value="Submit" className="locateField" />
+            </form>
         )
     }
 

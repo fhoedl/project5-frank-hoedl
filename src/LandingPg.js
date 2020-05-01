@@ -7,11 +7,11 @@ class LandingPg extends Component {
     render() {
         
         return (
-             <div className="App">
-                  <h1>forecaster</h1>
-                  <h2>a weather app</h2>
-                  <InputField />
-                  <GeoLocation /> 
+             <div className="landingContainer">
+                <h1>forecaster</h1>
+                <h2>a weather app</h2>
+                <InputField classname="lpInputs"/>
+                <GeoLocation classname="lpGeoLocate"/> 
              </div>             
         )
     }

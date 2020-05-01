@@ -1,20 +1,9 @@
 @import './ScssFiles/setup.scss';
+@import './ScssFiles/variables.scss';
 @import './ScssFiles/fonts.scss';
+@import './ScssFiles/global.scss';
+@import './ScssFiles/background.scss'
 
-.background {
-  width: 100%;
-  height: 100vh;
-  background-color: rgb(170, 202, 222);
-}
 
-.wIcons {
-  /* fill: currentColor; */
-  padding: 10px;
-  width: 200px;
-  height: 200px;
-}
 
-/* .svgContainer{
-  color: rgb(247, 3, 3);
-  fill: rgb(247, 3, 3);
-} */
+
