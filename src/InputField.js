@@ -17,9 +17,9 @@ class InputField extends Component {
     // PASS USER INPUT to WeatherData.js, ERROR Handled
     handleSubmit = (e) => {
         e.preventDefault();
-        // this.state.userInput !== ''
-        //     ?  this.setState({ userInput: ''}) 
-        //     : alert(`Please enter Location`)
+        this.state.userInput !== ''
+            ?  this.setState({ userInput: ''}) 
+            : alert(`Please enter Location`)
         this.props.searchInput(e, this.state.userInput)
     }
 
