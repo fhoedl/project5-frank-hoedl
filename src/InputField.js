@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from 'react-router-dom';
 
 class InputField extends Component {
     constructor(){
@@ -26,7 +27,7 @@ class InputField extends Component {
     render(){ 
         return(
             <form  className="locateWSubmit">
-                <input onChange={this.handleUserInput} type="text" id="locateInput" value={this.state.userInput} placeholder="New Search" className="locateField"/> 
+                <input onChange={this.handleUserInput} type="text" id="locateInput" value={this.state.userInput} placeholder="New Search" className="locateField"/>
                 <input onClick={this.handleSubmit} type="submit" value="Submit" className="locateField" />
             </form>
         )
