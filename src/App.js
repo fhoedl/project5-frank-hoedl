@@ -13,7 +13,7 @@ class App extends Component {
     return (
       <div className="background">
         <BackgroundElements />
-        <LandingPg />
+        {/* <LandingPg /> */}
         <MainPg />
       </div>
     )
