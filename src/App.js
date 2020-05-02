@@ -7,20 +7,16 @@ import MainPg from "./MainPg";
 import './App.scss';
 
 
-
-
 class App extends Component {
 
   render() {
-
     return (
       <div className="background">
         <BackgroundElements />
-        {/* <LandingPg /> */}
+        <LandingPg />
         <MainPg />
       </div>
-    );
-
+    )
   } 
 }
 

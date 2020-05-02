@@ -2,8 +2,7 @@ import React, { Component } from "react";
 import axios from 'axios';
 import images from "./images";
 import InputField from './InputField';
-import './App.scss';
-
+// import './App.scss';
 
 class WeatherData extends Component {
     constructor(){
@@ -30,14 +29,10 @@ class WeatherData extends Component {
             weatherTomorrow: [], // stretch goals
             weatherIn2Days: [] // stretch goals
         }
-        const newLocation = this.state.newSearch;
-        console.log(newLocation);
     }
 
     componentDidMount() {
-        // const reqLocation = this.state.newSearch;
        this.search();
-
     }
         
     search = () => {
@@ -48,18 +43,14 @@ class WeatherData extends Component {
             responseType: 'json',
             params: {
                 key: 'srnbJxPHaOsssQrGNwDmj2K6n47ObSRq',
-                // location: reqLocation,
                 location: this.state.newSearch
-            }
-
-        })
+            }})
             .then((results) => {
                 this.setState({
                     mapApiResult: results,
                     newLat: results.data.results[0].locations[0].latLng.lat,
                     newLon: results.data.results[0].locations[0].latLng.lng
                 })
-                console.log(this.state.mapApiResult, this.state.newLat, this.state.newLon)
                 weatherCall();
             })
 
@@ -71,9 +62,7 @@ class WeatherData extends Component {
                 responseType: 'json'
                 })
                 .then((response) => { 
-                    // Destructured
-                    const { daily, hourly } = response.data
-
+                    const { daily, hourly } = response.data // Destructured
                     // Returned Data ...settingSate
                     this.setState({
                         weather: daily[0],
@@ -83,34 +72,26 @@ class WeatherData extends Component {
                         weatherTomorrow: daily[1], // Stretch...
                         weatherIn2Days: daily[2], // Stretch...
                     })
-                    console.log(this.state.weather)
                 })
         }
     }     
    
-
-
-    // Search Passed to SearchFor, from Input.js, using Props
+    // Incoming USER Search from Input.js, using Props
     searchFor = (e, searchReq) =>{
         e.preventDefault();
-        // this.state.userInput !== ''
-        //     ? this.setState({ userInput: '' })
-        //     : alert(`Please enter Location`)
-        // console.log(searchReq);
-        this.setState({
-            newSearch: searchReq
-        },this.search);
+        this.setState({ newSearch: searchReq },this.search);
     }
 
-    // render is called on in MainPg.js
+    // render, OUTGOING to MainPg.js
     render() {   
         return (
             <>
                 <h3>
                     <span className="visHidden"></span>
-                    {this.state.currentTempFeelLIke}
+                    {this.state.currentTemp}
                     <span>°</span>
                 </h3>
+
                 <div className="conditionsContainer">
                     <img src={images[3].iSrc} alt={images[3].iAlt} className="wIcons" />
                     <h5><span>...</span> {this.state.currentCond}</h5>
@@ -130,21 +111,3 @@ class WeatherData extends Component {
 }
 
 export default WeatherData;
-
-
-    // React handleSubmit()
-    // handleSubmit(e){
-    //     e.preventDefault()
-    //     alert('Button Click working')
-    // };
-
-    // render(){
-
-    //     return (
-    //         <div className="geoLocateLink">
-    //             {/* Geo-location */}
-    //             {/* <input type="button" value="...use your current location" className="locateField geoLocationField" onClick={this.handleSubmit} /> */}
-    //             <input type="button" value="...use your current location" className="locateField geoLocationField" onClick={this.handleSubmit} />
-    //         </div>
-    //     )
-    // }
