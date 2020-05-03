@@ -23,13 +23,9 @@ class LandingPg extends Component {
         return (
              <Router basename="/project5-frank-hoedl" forceRefresh={true}>
                   <div>
-                       {/* <BackgroundElements /> */}
                        <div className="landingContainer wrapper">
                             <h1>forecaster</h1>
                             <h2>a weather app</h2>
-                            {/* <div style={this.formStyle} >
-                            <InputField className="lpInputs"/>
-                        </div> */}
                             <Link style={this.button} to="/main" replace>
                                  <button type="submit">Continue</button>
                             </Link>

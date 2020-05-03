@@ -2,7 +2,7 @@ import React, { Component } from "react";
 // import BackgroundElements from "./BackgroundElements";
 import WeatherData from "./WeatherData";
 // import Geolocation from "./GeoLocation";
-// import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 class MainPg extends Component {
 
@@ -13,7 +13,7 @@ class MainPg extends Component {
     render(){
 
         return (
-            //  <Router basename="/project5-frank-hoedl">
+             <Router basename="/project5-frank-hoedl">
                 <div style={this.reStyling}>
                     <div>
                         {/* <BackgroundElements /> */}
@@ -27,7 +27,7 @@ class MainPg extends Component {
                         </main>
                     </div>
                 </div>
-            // </Router>
+            </Router>
         );
     }
 }
