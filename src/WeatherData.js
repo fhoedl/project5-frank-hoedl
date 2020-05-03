@@ -3,6 +3,7 @@ import axios from 'axios';
 import images from "./images";
 import InputField from './InputField';
 
+
 class WeatherData extends Component {
     constructor(){
         super();
