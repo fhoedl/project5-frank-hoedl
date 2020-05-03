@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "1d71e7a3bd46f593e52ca7f54c9c5262",
+    "revision": "6d4eb8718faf22681304dd9fe7e8beae",
     "url": "/project5-frank-hoedl/index.html"
   },
   {
-    "revision": "3875689ee548ffd06dd7",
+    "revision": "b2297f7a2b153fc95a7d",
     "url": "/project5-frank-hoedl/static/css/main.e9a17f88.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/project5-frank-hoedl/static/js/2.38039616.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "3875689ee548ffd06dd7",
-    "url": "/project5-frank-hoedl/static/js/main.27277907.chunk.js"
+    "revision": "b2297f7a2b153fc95a7d",
+    "url": "/project5-frank-hoedl/static/js/main.1a5b09bb.chunk.js"
   },
   {
     "revision": "d98d1e14015be4d1b3fd",
