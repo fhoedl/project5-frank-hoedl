@@ -14,7 +14,7 @@ class MainPg extends Component {
     render(){
 
         return (
-             <Router>
+             <Router basename={process.env.PUBLIC_URL + "/"}>
                   <div style={this.reStyling}>
                        {/* <BackgroundElements /> */}
                        <main className="mainContainer wrapper">
