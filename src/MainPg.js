@@ -13,7 +13,7 @@ class MainPg extends Component {
     render(){
 
         return (
-             <Router basename={process.env.PUBLIC_URL}>
+             <Router basename={process.env.PUBLIC_URL + "/"}>
                   <div style={this.reStyling}>
                        <div>
                             {/* <BackgroundElements /> */}

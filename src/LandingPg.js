@@ -21,7 +21,7 @@ class LandingPg extends Component {
     render() {
 
         return (
-             <Router basename={process.env.PUBLIC_URL} forceRefresh={true}>
+             <Router basename={process.env.PUBLIC_URL + "/"} forceRefresh={true}>
                   <div>
                        <div className="landingContainer wrapper">
                             <h1>forecaster</h1>
