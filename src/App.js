@@ -14,7 +14,7 @@ class App extends Component {
   render() {
     return (
 
-      <Router basename={process.env.PUBLIC_URL + "/"}>
+      <Router>
           <div className="background">
             <BackgroundElements />
             <Switch>
