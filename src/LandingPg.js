@@ -22,16 +22,16 @@ class LandingPg extends Component {
 
         return (
              <Router
-                  basename={process.env.PUBLIC_URL} forceRefresh={true}>
+                  basename={process.env.PUBLIC_URL+'/'} forceRefresh={true}>
                   <div>
                        {/* <BackgroundElements /> */}
                        <div className="landingContainer wrapper">
                             <h1>forecaster</h1>
                             <h2>a weather app</h2>
-                            <Link style={this.button} to="/main" replace>
+                            <Link style={this.button} to='/main'>
                                  <button type="submit">Continue</button>
                             </Link>
-                            <Route path="/main" component={MainPg} />
+                            <Route path='/main' component={MainPg} />
                             <GeoLocation className="lpGeoLocate" />
                        </div>
                   </div>

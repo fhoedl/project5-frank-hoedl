@@ -13,13 +13,12 @@ class App extends Component {
 
   render() {
     return (
-
-      <Router basename={process.env.PUBLIC_URL}>
+      <Router basename={process.env.PUBLIC_URL+'/'}>
           <div className="background">
             <BackgroundElements />
             <Switch>
-              <Route path="/" exact component={LandingPg} />
-              <Route path="/main" component={MainPg}/>
+              <Route path='/' exact component={LandingPg} />
+              <Route path='/main' component={MainPg}/>
             </Switch>
         </div>
       </Router>
