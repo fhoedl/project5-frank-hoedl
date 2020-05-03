@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import InputField from "./InputField";
+import InputField from "../InputField";
 // import BackgroundElements from "./BackgroundElements";
-import GeoLocation from "./GeoLocation";
-import MainPg from "./MainPg";
+import GeoLocation from "../GeoLocation";
+import MainPg from "../MainPg";
 import './App.scss'
 import { BrowserRouter as Router,Route,Link} from "react-router-dom";
 

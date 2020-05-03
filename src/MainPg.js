@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 // import BackgroundElements from "./BackgroundElements";
 import WeatherData from "./WeatherData";
-// import Geolocation from "./GeoLocation";
+import GeoLocation from "./GeoLocation";
 import { BrowserRouter as Router } from 'react-router-dom';
 
 class MainPg extends Component {
@@ -23,7 +23,7 @@ class MainPg extends Component {
                             </section>
 
                             <WeatherData />
-                            {/* <Geolocation />  */}
+                            {/* <GeoLocation className="lpGeoLocate" /> */}
                        </main>
                   </div>
              </Router>
