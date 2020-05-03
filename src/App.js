@@ -13,15 +13,19 @@ class App extends Component {
 
   render() {
     return (
-      <Router basename={process.env.PUBLIC_URL+'/'}>
-          <div className="background">
-            <BackgroundElements />
-            <Switch>
+         <Router basename={process.env.PUBLIC_URL + "/"}>
+              <div className="background">
+                   <BackgroundElements />
+                   {/* <Switch>
               <Route path='/' exact component={LandingPg} />
               <Route path='/main' component={MainPg}/>
-            </Switch>
-        </div>
-      </Router>
+            </Switch> */}
+              <Switch>
+                <Route path='/' component={MainPg}/>
+                {/* <Route path='/' exact component={LandingPg} /> */}
+              </Switch>
+              </div>
+         </Router>
     );
   }
 }
