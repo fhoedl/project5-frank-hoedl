@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import InputField from "./InputField";
 // import BackgroundElements from "./BackgroundElements";
-import { BrowserRouter as Router,Route,Link} from "react-router-dom";
 import GeoLocation from "./GeoLocation";
 import MainPg from "./MainPg";
 import './App.scss'
+import { BrowserRouter as Router,Route,Link} from "react-router-dom";
 
 class LandingPg extends Component {
 
@@ -22,7 +22,9 @@ class LandingPg extends Component {
 
         return (
              <Router
-                  basename={process.env.PUBLIC_URL+'/'} forceRefresh={true}>
+                //   basename={process.env.PUBLIC_URL+'/'} 
+                  forceRefresh={true}
+                  >
                   <div>
                        {/* <BackgroundElements /> */}
                        <div className="landingContainer wrapper">

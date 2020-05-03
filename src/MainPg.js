@@ -14,19 +14,19 @@ class MainPg extends Component {
     render(){
 
         return (
-             <Router basename={process.env.PUBLIC_URL+'/'}>
-                <div style={this.reStyling}>
-                    {/* <BackgroundElements /> */}
-                    <main className="mainContainer wrapper">
+             <Router>
+                  <div style={this.reStyling}>
+                       {/* <BackgroundElements /> */}
+                       <main className="mainContainer wrapper">
                             <section className="header">
-                                <h4>forecaster</h4>
+                                 <h4>forecaster</h4>
                             </section>
 
                             <WeatherData />
                             {/* <Geolocation />  */}
-                    </main>
-                </div>
-            </Router>
+                       </main>
+                  </div>
+             </Router>
         );
     }
 }

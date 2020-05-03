@@ -1,12 +1,12 @@
 import React, { Component }from 'react';
 // Styling
 import './App.scss';
-// Packages
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 // Imports
 import BackgroundElements from "./BackgroundElements";
 import MainPg from "./MainPg";
 import LandingPg from './LandingPg';
+// Packages
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 
 class App extends Component {
