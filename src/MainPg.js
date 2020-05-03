@@ -13,7 +13,7 @@ class MainPg extends Component {
     render(){
 
         return (
-             <Router basename="/project5-frank-hoedl">
+             <Router>
                 <div style={this.reStyling}>
                     <div>
                         {/* <BackgroundElements /> */}

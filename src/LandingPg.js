@@ -21,7 +21,7 @@ class LandingPg extends Component {
     render() {
 
         return (
-             <Router basename="/project5-frank-hoedl" forceRefresh={true}>
+             <Router forceRefresh={true}>
                   <div>
                        <div className="landingContainer wrapper">
                             <h1>forecaster</h1>
