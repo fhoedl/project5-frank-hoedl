@@ -32,6 +32,7 @@ class WeatherData extends Component {
     }
 
     componentDidMount() {
+
        this.search();
     }
         
@@ -86,7 +87,7 @@ class WeatherData extends Component {
     render() {   
         return (
              <>
-                  <dev className="dataContainer">
+                  <div className="dataContainer">
                     <h3>
                         <span className="visHidden"></span>
                         {this.state.currentTemp}
@@ -102,7 +103,7 @@ class WeatherData extends Component {
                                 <span>...</span> {this.state.currentCond}
                         </h5>
                     </div>
-                  </dev>
+                  </div>
 
                   <section className="locationContainer">
                        <h2 className="selectedLocale">

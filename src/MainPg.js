@@ -1,21 +1,34 @@
 import React, { Component } from "react";
+// import BackgroundElements from "./BackgroundElements";
 import WeatherData from "./WeatherData";
-// import './App.scss';
+// import Geolocation from "./GeoLocation";
+// import { BrowserRouter as Router } from 'react-router-dom';
 
 class MainPg extends Component {
 
+    reStyling = {
+        gridColumn: '1 / -1'
+    }
+
     render(){
 
-        return(
-            <main className="mainContainer wrapper">
+        return (
+            //  <Router basename="/project5-frank-hoedl">
+                <div style={this.reStyling}>
+                    <div>
+                        {/* <BackgroundElements /> */}
+                        <main className="mainContainer wrapper">
+                                <section className="header">
+                                    <h4>forecaster</h4>
+                                </section>
 
-                <section className="header">
-                    <h4>forecaster</h4>
-                </section>
-
-                <WeatherData />                          
-            </main>
-        )
+                                <WeatherData />
+                                {/* <Geolocation />  */}
+                        </main>
+                    </div>
+                </div>
+            // </Router>
+        );
     }
 }
 

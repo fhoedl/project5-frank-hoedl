@@ -67,7 +67,8 @@ h5{
 
 // Inputs
 
-input {
+input,
+button {
     display: block;
     background-color: hsl(212, 19%, 45%);
     border: none;
@@ -81,6 +82,7 @@ input {
     text-align: center;
     letter-spacing: .02rem;
     margin: auto;
+
 } 
 
 input[type="submit"] {
@@ -89,4 +91,7 @@ input[type="submit"] {
     text-transform: uppercase;
 }
 
-
+input:hover,
+button:hover {
+  background-color: rgb(233, 233, 16);
+}

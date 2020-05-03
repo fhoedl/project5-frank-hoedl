@@ -2,7 +2,7 @@ import React, { Component }from 'react';
 // Styling
 import './App.scss';
 // Packages
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 // Imports
 import BackgroundElements from "./BackgroundElements";
 import MainPg from "./MainPg";
@@ -17,15 +17,11 @@ class App extends Component {
       <Router basename="/project5-frank-hoedl">
           <div className="background">
             <BackgroundElements />
-            {/* <Switch>
-              <Route path="/" exact component={MainPg}/>
-              <Route path="/landing" component={LandingPg} />
-            </Switch> */}
             <Switch>
-              <Route path="/" exact component={MainPg}/>
-              {/* <Route path="/landing" component={LandingPg} /> */}
+              <Route path="/" exact component={LandingPg} />
+              <Route path="/main" component={MainPg}/>
             </Switch>
-      </div>
+        </div>
       </Router>
     );
   }
