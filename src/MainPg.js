@@ -13,21 +13,21 @@ class MainPg extends Component {
     render(){
 
         return (
-             <Router>
-                <div style={this.reStyling}>
-                    <div>
-                        {/* <BackgroundElements /> */}
-                        <main className="mainContainer wrapper">
-                                <section className="header">
-                                    <h4>forecaster</h4>
-                                </section>
+             <Router basename={process.env.PUBLIC_URL}>
+                  <div style={this.reStyling}>
+                       <div>
+                            {/* <BackgroundElements /> */}
+                            <main className="mainContainer wrapper">
+                                 <section className="header">
+                                      <h4>forecaster</h4>
+                                 </section>
 
-                                <WeatherData />
-                                {/* <Geolocation />  */}
-                        </main>
-                    </div>
-                </div>
-            </Router>
+                                 <WeatherData />
+                                 {/* <Geolocation />  */}
+                            </main>
+                       </div>
+                  </div>
+             </Router>
         );
     }
 }
