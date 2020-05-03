@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "6028a88ce3f4360274b0fc928bde8b40",
+    "revision": "97f9bde4925b46da0c25dd52df24043c",
     "url": "/project5-frank-hoedl/index.html"
   },
   {
-    "revision": "26c655d1cb69922f79b2",
+    "revision": "53399b90115378debb51",
     "url": "/project5-frank-hoedl/static/css/main.1798bf21.chunk.css"
   },
   {
-    "revision": "a27d081036bd990ffa61",
-    "url": "/project5-frank-hoedl/static/js/2.1df97202.chunk.js"
+    "revision": "b7852413f86ef81d0532",
+    "url": "/project5-frank-hoedl/static/js/2.23f00447.chunk.js"
   },
   {
     "revision": "c64c486544348f10a6d6c716950bc223",
-    "url": "/project5-frank-hoedl/static/js/2.1df97202.chunk.js.LICENSE.txt"
+    "url": "/project5-frank-hoedl/static/js/2.23f00447.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "26c655d1cb69922f79b2",
-    "url": "/project5-frank-hoedl/static/js/main.01552174.chunk.js"
+    "revision": "53399b90115378debb51",
+    "url": "/project5-frank-hoedl/static/js/main.d315d7e4.chunk.js"
   },
   {
     "revision": "d98d1e14015be4d1b3fd",
