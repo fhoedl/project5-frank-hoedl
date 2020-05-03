@@ -1,12 +1,12 @@
 import React, { Component }from 'react';
 // Styling
 import './App.scss';
-// Packages //...added
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'; //...added
+// Packages
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 // Imports
 import BackgroundElements from "./BackgroundElements";
-// import LandingPg from "./LandingPg";
 import MainPg from "./MainPg";
+import LandingPg from './LandingPg';
 
 
 class App extends Component {
@@ -19,24 +19,13 @@ class App extends Component {
           <BackgroundElements />
           <Switch>
             <Route path="/" exact component={MainPg}/>
-            {/* <Route path="/landing" component={LandingPg} /> */}
+            <Route path="/landing" component={LandingPg} />
           </Switch>
+          {/* <LandingPg /> */}
         </div>
       </Router>
     )
   }
 }
-
-//   render() {
-//     return (
-//         <div className="background">
-//           <BackgroundElements />
-//           {/* <LandingPg /> */}
-//           <MainPg />
-//         </div>
-//     )
-//   } 
-// }
-
 
 export default App;

@@ -13,10 +13,7 @@ class MainPg extends Component {
                     <h4>forecaster</h4>
                 </section>
 
-                <section className="dataContainer">
-                    <WeatherData />
-                </section>
-                            
+                <WeatherData />                          
             </main>
         )
     }

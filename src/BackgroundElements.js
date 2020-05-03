@@ -2,9 +2,7 @@ import React, { Component } from "react";
 import images from "./images";
 import './App.scss';
 
-
 class BackgroundElements extends Component {
-
     render(){
         return (
             <div>
@@ -14,9 +12,6 @@ class BackgroundElements extends Component {
             </div>
         )
     }
-
-
-
 }
 
 export default BackgroundElements;

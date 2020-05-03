@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import axios from 'axios';
 import images from "./images";
 import InputField from './InputField';
-// import './App.scss';
 
 class WeatherData extends Component {
     constructor(){
@@ -85,28 +84,35 @@ class WeatherData extends Component {
     // render, OUTGOING to MainPg.js
     render() {   
         return (
-            <>
-                <h3>
-                    <span className="visHidden"></span>
-                    {this.state.currentTemp}
-                    <span>°</span>
-                </h3>
-
-                <div className="conditionsContainer">
-                    <img src={images[3].iSrc} alt={images[3].iAlt} className="wIcons" />
-                    <h5><span>...</span> {this.state.currentCond}</h5>
-                </div>
-                
-                <section className="locationContainer">
-                    <h2 className="selectedLocale">
-                        {this.state.newSearch}
-                    </h2>
-                    <div className="inputContainer">
-                        <InputField searchInput={this.searchFor}/>
+             <>
+                  <dev className="dataContainer">
+                    <h3>
+                        <span className="visHidden"></span>
+                        {this.state.currentTemp}
+                        <span>°</span>
+                    </h3>
+                    <div className="conditionsContainer">
+                        <img
+                                src={images[3].iSrc}
+                                alt={images[3].iAlt}
+                                className="wIcons"
+                        />
+                        <h5>
+                                <span>...</span> {this.state.currentCond}
+                        </h5>
                     </div>
-                </section>
-            </>
-        )
+                  </dev>
+
+                  <section className="locationContainer">
+                       <h2 className="selectedLocale">
+                            {this.state.newSearch}
+                       </h2>
+                       <div className="inputContainer">
+                            <InputField searchInput={this.searchFor} />
+                       </div>
+                  </section>
+             </>
+        );
     }
 }
 
