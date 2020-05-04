@@ -17,17 +17,13 @@ class WeatherData extends Component {
 
             // Weather API, required for return
             keys: '1b5614554d2203c32690e03daee17bfb',
-            units: `metric`, //Default, OPTION to change
+            units: `metric`,
 
             // storing Data to be distributed by RETURN...
             weather: [],
             currentTemp: [],
-            currentTempFeelLIke: [],
             currentCond: [],
-            weatherIcon: [],
-
-            weatherTomorrow: [], // stretch goals
-            weatherIn2Days: [] // stretch goals
+            weatherIcon: []
         }
     }
 
@@ -68,11 +64,8 @@ class WeatherData extends Component {
                     this.setState({
                         weather: daily[0],
                         currentTemp: (hourly[0].temp).toFixed(0),
-                        currentTempFeelLIke: (hourly[0].feels_like).toFixed(0),
                         currentCond: daily[0].weather[0].description,
-                        weatherIcon: daily[0].weather[0].icon,
-                        weatherTomorrow: daily[1], // Stretch...
-                        weatherIn2Days: daily[2], // Stretch...
+                        weatherIcon: daily[0].weather[0].icon
                     })
                 })
         }
@@ -87,12 +80,10 @@ class WeatherData extends Component {
     textCity = {
         textTransform: 'capitalize'
     }
-
-
+    
     // render, OUTGOING to MainPg.js
     render() { 
         const icon = `http://openweathermap.org/img/wn/${this.state.weatherIcon}@2x.png`
-
         
         return (
              <>

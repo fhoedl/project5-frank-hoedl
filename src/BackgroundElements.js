@@ -6,9 +6,9 @@ class BackgroundElements extends Component {
     render(){
         return (
             <div>
-                <img src={images[0].iSRC} alt="Background Building" className="bkgdElements bkgd" />
-                <img src={images[1].iSRC} alt="Background Building" className="bkgdElements mid" />
-                <img src={images[2].iSRC} alt="Background Building" className="bkgdElements fore" />
+                <img src={images[0].iSRC} alt="Background Building" className="bkgdElements bkgd" aria-hidden="true"/>
+                <img src={images[1].iSRC} alt="Background Building" className="bkgdElements mid" aria-hidden="true"/>
+                <img src={images[2].iSRC} alt="Background Building" className="bkgdElements fore" aria-hidden="true"/>
             </div>
         )
     }

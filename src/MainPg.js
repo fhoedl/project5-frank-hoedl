@@ -1,8 +1,7 @@
-import React, { Component } from "react";
-// import BackgroundElements from "./BackgroundElements";
+import React, { Component } from "react"; 
 import WeatherData from "./WeatherData";
-import GeoLocation from "./GeoLocation";
-import { BrowserRouter as Router } from 'react-router-dom';
+import './App.scss';
+// import GeoLocation from "./GeoLocation";
 
 class MainPg extends Component {
 
@@ -14,19 +13,17 @@ class MainPg extends Component {
     render(){
 
         return (
-             <Router basename={process.env.PUBLIC_URL + "/"}>
                   <div style={this.reStyling}>
-                       {/* <BackgroundElements /> */}
-                       <main className="mainContainer wrapper">
-                            <section className="header">
-                                 <h4>forecaster</h4>
-                            </section>
-
+                       <div className="mainContainer wrapper">
+                           <header>
+                               <h1>forecaster</h1>
+                               <h2>a weather app</h2>
+                           </header>
+                            
                             <WeatherData />
-                            {/* <GeoLocation className="lpGeoLocate" /> */}
-                       </main>
+                       </div>
                   </div>
-             </Router>
+
         );
     }
 }

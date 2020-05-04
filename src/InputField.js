@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import './App.scss';
 
 class InputField extends Component {
     constructor(){
@@ -25,7 +26,7 @@ class InputField extends Component {
     // is called in MainPg amd LandingPg
     render(){ 
         return(
-            <form  className="locateWSubmit">
+            <form className="locateWSubmit">
                 <input onChange={this.handleUserInput} type="text" id="locateInput" value={this.state.userInput} placeholder="New Search" className="locateField"/>
                 <input onClick={this.handleSubmit} type="submit" value="Submit" className="locateField" />
             </form>
